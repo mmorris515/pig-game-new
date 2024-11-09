@@ -6,6 +6,7 @@ import {
   increment,
   incrementByAmount,
   incrementAsync,
+  decrementAsync,
   incrementIfOdd,
   selectCount,
 } from "./counterSlice";
@@ -13,9 +14,9 @@ import {
 export default function Counter(): JSX.Element {
   const count = useAppSelector(selectCount);
   const dispatch = useAppDispatch();
-  const [incrementAmount, setIncrementAmount] = useState("2");
+  const [amount, setAmount] = useState("2");
 
-  const incrementValue = Number(incrementAmount) || 0;
+  const value = Number(amount) || 0;
 
   return (
     <div>
@@ -41,25 +42,31 @@ export default function Counter(): JSX.Element {
       <div className="flex w-max px-4 py-2 rounded-lg shadow-md items-center justify-center gap-4 bg-gray-400 mx-auto mt-8">
         <input
           aria-label="Set increment amount"
-          value={incrementAmount}
-          onChange={(e) => setIncrementAmount(e.target.value)}
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
           className="bg-gray-200 px-4 py-2 w-12 text-gray-600 rounded-sm text-center outline-none focus:outline-none focus:ring-2 ring-purple-600"
         />
         <button
           className="bg-purple-600 text-white px-4 py-1 rounded-md hover:bg-purple-700"
-          onClick={() => dispatch(incrementByAmount(incrementValue))}
+          onClick={() => dispatch(incrementByAmount(value))}
         >
           Add Amount
         </button>
         <button
           className="bg-purple-600 text-white px-4 py-1 rounded-md hover:bg-purple-700"
-          onClick={() => dispatch(incrementAsync(incrementValue))}
+          onClick={() => dispatch(incrementAsync(value))}
         >
           Add Async
         </button>
         <button
           className="bg-purple-600 text-white px-4 py-1 rounded-md hover:bg-purple-700"
-          onClick={() => dispatch(incrementIfOdd(incrementValue))}
+          onClick={() => dispatch(decrementAsync(value))}
+        >
+          Subtract Async {/* code needs to updated to activate decrementAsync */}
+        </button>
+        <button
+          className="bg-purple-600 text-white px-4 py-1 rounded-md hover:bg-purple-700"
+          onClick={() => dispatch(incrementIfOdd(value))}
         >
           Add If Odd
         </button>
