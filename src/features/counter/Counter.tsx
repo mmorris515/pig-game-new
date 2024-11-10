@@ -18,7 +18,7 @@ export default function Counter(): JSX.Element {
   const value = Number(amount) || 0;
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-800">
+    <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <div className="flex w-full max-w-md flex-col items-center justify-center p-4 bg-gray-700 rounded-lg shadow-lg gap-4">
         <div className="flex w-full items-center justify-center gap-4">
           <button
