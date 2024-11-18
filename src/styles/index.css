@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.rethink-sans {
+    font-family: "Rethink Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+/* Dice animation */
+
+@keyframes roll {
+  0% { transform: rotate(0deg) translateX(0); }
+  25% { transform: rotate(90deg) translateX(5px); }
+  50% { transform: rotate(180deg) translateX(0); }
+  75% { transform: rotate(270deg) translateX(-5px); }
+  100% { transform: rotate(360deg) translateX(0); }
+}
+
+.animate-roll {
+  animation: roll 0.75s ease-in-out;
+}

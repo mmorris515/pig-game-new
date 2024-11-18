@@ -1,18 +1,12 @@
-import React from "react";
-import "./index.css";
-import App from "./pages/App";
-import { store } from "./app/store";
-import { Provider } from "react-redux";
+// src/main.tsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { store } from './store';
+import App from './App';
+import './styles/index.css';
 
-import { createRoot } from "react-dom/client";
-
-const container = document.getElementById("root");
-
-if (!container) throw new Error("Could not find root element with id 'root'");
-
-const root = createRoot(container);
-
-root.render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Provider store={store}>
       <App />
