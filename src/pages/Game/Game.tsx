@@ -1,4 +1,3 @@
-// src/components/Game/Game.tsx
 import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import {
@@ -38,49 +37,53 @@ export const Game: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 py-6">
-      <div className="max-w-4xl mx-auto px-4 h-full flex flex-col justify-between gap-8">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100">
+      <div className="h-screen flex flex-col p-4 sm:p-6">
         {gameOver ? (
-          <div className="text-center bg-white rounded-xl p-8 shadow-lg">
-            <h1 className="text-4xl font-bold mb-4 text-blue-600">
-              {players[winner!].name} wins!
-            </h1>
-            <button
-              onClick={() => dispatch(startNewGame())}
-              className="bg-green-500 text-white px-6 py-3 rounded-lg text-lg
-                hover:bg-green-600 transform hover:scale-105 transition-all"
-            >
-              Play Again
-            </button>
+          <div className="flex-grow flex items-center justify-center">
+            <div className="text-center bg-white rounded-xl p-8 shadow-lg">
+              <h1 className="text-4xl font-bold mb-4 text-blue-600">
+                {players[winner!].name} wins!
+              </h1>
+              <button
+                onClick={() => dispatch(startNewGame())}
+                className="bg-green-500 text-white px-6 py-3 rounded-lg text-lg
+                  hover:bg-green-600 transform hover:scale-105 transition-all"
+              >
+                Play Again
+              </button>
+            </div>
           </div>
         ) : (
           <>
-            {/* Container Div */}
-            <div className="flex justify-between items-center">
-              {/* Header Scores */}
-              <div className="flex justify-between w-full max-w-4xl mx-auto">
-                {players.map((player, index) => (
-                  <div key={`header-${player.id}`} className="w-1/3">
-                    <PlayerScore
-                      player={player}
-                      isActive={activePlayer === index}
-                      type="header"
-                    />
-                  </div>
-                ))}
+            {/* Top Section - Player Total Scores */}
+            <div className="flex justify-between items-start gap-4 mb-8">
+              <div className="flex-1 flex justify-center">
+                <PlayerScore
+                  player={players[0]}
+                  isActive={activePlayer === 0}
+                  type="header"
+                />
+              </div>
+              <div className="flex-1 flex justify-center">
+                <PlayerScore
+                  player={players[1]}
+                  isActive={activePlayer === 1}
+                  type="header"
+                />
               </div>
             </div>
 
-            {/* Dice */}
-            <div className="flex justify-center items-center">
-              <div className="bg-white rounded-xl p-8 shadow-lg">
+            {/* Middle Section - Dice */}
+            <div className="flex-grow flex justify-center items-center">
+              <div className="bg-white rounded-xl p-6 sm:p-8 shadow-lg">
                 <DicePair values={dice} isRolling={isRolling} />
               </div>
             </div>
 
-            {/* Footer Scores and Buttons */}
-            <div className="flex justify-between items-center w-full max-w-4xl mx-auto">
-              <div className="w-1/3">
+            {/* Bottom Section - Current Scores and Buttons */}
+            <div className="flex justify-between items-center gap-4 mt-8">
+              <div className="flex-1 flex justify-center">
                 <PlayerScore
                   player={players[0]}
                   isActive={activePlayer === 0}
@@ -89,29 +92,29 @@ export const Game: React.FC = () => {
               </div>
 
               {!players[activePlayer].isComputer && (
-                <div className="flex space-x-4">
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
                   <button
                     onClick={handleRoll}
                     disabled={isRolling}
-                    className="bg-blue-500 text-white px-6 py-3 rounded-lg text-lg
+                    className="bg-blue-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-base sm:text-lg
                       hover:bg-blue-600 disabled:bg-blue-300 disabled:cursor-not-allowed
-                      transform hover:scale-105 transition-all"
+                      transform hover:scale-105 transition-all whitespace-nowrap"
                   >
                     Roll Dice
                   </button>
                   <button
                     onClick={() => dispatch(hold())}
                     disabled={isRolling}
-                    className="bg-green-500 text-white px-6 py-3 rounded-lg text-lg
+                    className="bg-green-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-base sm:text-lg
                       hover:bg-green-600 disabled:bg-green-300 disabled:cursor-not-allowed
-                      transform hover:scale-105 transition-all"
+                      transform hover:scale-105 transition-all whitespace-nowrap"
                   >
                     Hold
                   </button>
                 </div>
               )}
 
-              <div className="w-1/3">
+              <div className="flex-1 flex justify-center">
                 <PlayerScore
                   player={players[1]}
                   isActive={activePlayer === 1}
