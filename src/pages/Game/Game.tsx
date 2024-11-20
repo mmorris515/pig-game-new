@@ -37,7 +37,7 @@ export const Game: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100">
+    <div className="min-h-screen bg-gradient-to-b from-gray-20 to-gray-100">
       <div className="h-screen flex flex-col p-4 sm:p-6">
         {gameOver ? (
           <div className="flex-grow flex items-center justify-center">
