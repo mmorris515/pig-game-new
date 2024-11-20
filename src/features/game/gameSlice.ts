@@ -1,6 +1,5 @@
-// src/features/game/gameSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import type { GameState } from './types';
+import type { GameState, GameHistoryEntry } from './types';
 
 const initialState: GameState = {
   players: [
@@ -11,7 +10,8 @@ const initialState: GameState = {
   dice: [1, 1],
   gameOver: false,
   winner: null,
-  isRolling: false
+  isRolling: false,
+  gameHistory: [] // Initialize gameHistory as an empty array
 };
 
 const gameSlice = createSlice({
@@ -46,10 +46,16 @@ const gameSlice = createSlice({
       currentPlayer.totalScore += currentPlayer.turnScore;
       currentPlayer.turnScore = 0;
       
-      // Check for winner
-      if (currentPlayer.totalScore >= 100) {
+      // Check for winner. SET TO LOWER SCORE FOR TESTING
+      if (currentPlayer.totalScore >= 25) {
         state.gameOver = true;
         state.winner = currentPlayer.id;
+        // Add game result to history
+        state.gameHistory.push({
+          winner: currentPlayer.id,
+          finalScores: [state.players[0].totalScore, state.players[1].totalScore],
+          playerRolls: state.dice.reduce((a, b) => a + b, 0)
+        });
       } else {
         state.activePlayer = state.activePlayer === 0 ? 1 : 0;
       }

@@ -7,6 +7,12 @@ export interface Player {
     turnScore: number;
     isComputer: boolean;
   }
+
+  export interface GameHistoryEntry {
+    winner: number;
+    finalScores: [number, number];
+    playerRolls: number;
+  }
   
   export interface GameState {
     players: Player[];
@@ -15,4 +21,5 @@ export interface Player {
     gameOver: boolean;
     winner: number | null;
     isRolling: boolean;
+    gameHistory: GameHistoryEntry[];
   }
