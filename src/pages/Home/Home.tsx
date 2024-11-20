@@ -1,12 +1,16 @@
 // src/pages/Home/Home.tsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../hooks";
+import { startNewGame } from "../../features/game/gameSlice";
 import Header from "../../components/Layout/Header";
 
 const HomePage: React.FC = () => {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
-  const startNewGame = () => {
+  const handleNewGame = () => {
+    dispatch(startNewGame());
     navigate("/game");
   };
 
@@ -33,7 +37,7 @@ const HomePage: React.FC = () => {
 
           <div className="text-center">
             <button
-              onClick={startNewGame}
+              onClick={handleNewGame}
               className="bg-green-500 text-white px-8 py-3 rounded-lg text-xl
                 hover:bg-green-600 transform hover:scale-105 transition-all
                 shadow-md"

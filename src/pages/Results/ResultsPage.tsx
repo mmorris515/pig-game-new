@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../hooks";
-import { startNewGame } from "../../features/game/gameSlice";
+import { startNewGame, resetGameHistory } from "../../features/game/gameSlice";
 import Header from "../../components/Layout/Header";
 
 const ResultsPage: React.FC = () => {
@@ -12,6 +12,10 @@ const ResultsPage: React.FC = () => {
   const handleNewGame = () => {
     dispatch(startNewGame());
     navigate("/game");
+  };
+
+  const handleResetHistory = () => {
+    dispatch(resetGameHistory());
   };
 
   return (
@@ -64,6 +68,14 @@ const ResultsPage: React.FC = () => {
                 shadow-md"
             >
               New Game
+            </button>
+            <button
+              onClick={handleResetHistory}
+              className="bg-red-500 text-white px-8 py-3 rounded-lg text-xl
+                hover:bg-red-600 transform hover:scale-105 transition-all
+                shadow-md ml-4"
+            >
+              Reset History
             </button>
           </div>
         </div>

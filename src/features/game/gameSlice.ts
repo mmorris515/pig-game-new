@@ -1,6 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { GameState, GameHistoryEntry } from './types';
 
+const loadGameHistory = (): GameHistoryEntry[] => {
+  const savedHistory = localStorage.getItem('gameHistory');
+  return savedHistory ? JSON.parse(savedHistory) : [];
+};
+
 const initialState: GameState = {
   players: [
     { id: 0, name: 'Player', totalScore: 0, turnScore: 0, isComputer: false },
@@ -11,7 +16,11 @@ const initialState: GameState = {
   gameOver: false,
   winner: null,
   isRolling: false,
-  gameHistory: [] // Initialize gameHistory as an empty array
+  gameHistory: loadGameHistory() // Load game history from local storage
+};
+
+const saveGameHistory = (gameHistory: GameHistoryEntry[]) => {
+  localStorage.setItem('gameHistory', JSON.stringify(gameHistory));
 };
 
 const gameSlice = createSlice({
@@ -46,8 +55,7 @@ const gameSlice = createSlice({
       currentPlayer.totalScore += currentPlayer.turnScore;
       currentPlayer.turnScore = 0;
       
-      // Check for winner
-      // Changed final score to 25 for testing
+      // Check for winner (set to 25 for now, for testing)
       if (currentPlayer.totalScore >= 25) {
         state.gameOver = true;
         state.winner = currentPlayer.id;
@@ -57,6 +65,7 @@ const gameSlice = createSlice({
           finalScores: [state.players[0].totalScore, state.players[1].totalScore],
           playerRolls: state.dice.reduce((a, b) => a + b, 0)
         });
+        saveGameHistory(state.gameHistory); // Save game history to local storage
       } else {
         state.activePlayer = state.activePlayer === 0 ? 1 : 0;
       }
@@ -71,6 +80,11 @@ const gameSlice = createSlice({
       state.isRolling = initialState.isRolling;
       // Preserve gameHistory
     },
+
+    resetGameHistory: (state) => {
+      state.gameHistory = [];
+      localStorage.removeItem('gameHistory'); // Clear game history from local storage
+    },
     
     setRolling: (state, action: PayloadAction<boolean>) => {
       state.isRolling = action.payload;
@@ -78,5 +92,5 @@ const gameSlice = createSlice({
   }
 });
 
-export const { rollDice, hold, startNewGame, setRolling } = gameSlice.actions;
+export const { rollDice, hold, startNewGame, resetGameHistory, setRolling } = gameSlice.actions;
 export default gameSlice.reducer;
