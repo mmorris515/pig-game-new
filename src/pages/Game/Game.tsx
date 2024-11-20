@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import {
   rollDice,
@@ -13,6 +14,7 @@ import PlayerScore from "../../components/PlayerScore/PlayerScore";
 
 export const Game: React.FC = () => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const { players, activePlayer, dice, gameOver, winner, isRolling } =
     useAppSelector((state: RootState) => state.game as GameState);
 
@@ -35,6 +37,13 @@ export const Game: React.FC = () => {
       return () => clearTimeout(timer);
     }
   }, [activePlayer, players, gameOver, dispatch]);
+
+  useEffect(() => {
+    if (gameOver) {
+      navigate("/results");
+    }
+  }, [gameOver, navigate]);
+
   const handleRoll = () => {
     dispatch(setRolling(true));
     setTimeout(() => dispatch(rollDice()), 1000);

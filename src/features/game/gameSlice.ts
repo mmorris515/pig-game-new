@@ -46,7 +46,8 @@ const gameSlice = createSlice({
       currentPlayer.totalScore += currentPlayer.turnScore;
       currentPlayer.turnScore = 0;
       
-      // Check for winner. SET TO LOWER SCORE FOR TESTING
+      // Check for winner
+      // Changed final score to 25 for testing
       if (currentPlayer.totalScore >= 25) {
         state.gameOver = true;
         state.winner = currentPlayer.id;
@@ -61,7 +62,15 @@ const gameSlice = createSlice({
       }
     },
 
-    startNewGame: () => initialState,
+    startNewGame: (state) => {
+      state.players = initialState.players;
+      state.activePlayer = initialState.activePlayer;
+      state.dice = initialState.dice;
+      state.gameOver = initialState.gameOver;
+      state.winner = initialState.winner;
+      state.isRolling = initialState.isRolling;
+      // Preserve gameHistory
+    },
     
     setRolling: (state, action: PayloadAction<boolean>) => {
       state.isRolling = action.payload;
