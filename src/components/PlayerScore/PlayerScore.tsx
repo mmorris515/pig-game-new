@@ -24,11 +24,6 @@ const PlayerScore: React.FC<PlayerScoreProps> = ({
       >
         <h2 className="text-xl font-bold mb-2">{player.name}</h2>
         <div className="text-3xl font-bold">{player.totalScore}</div>
-        {isActive && (
-          <div className="mt-2 px-3 py-1 bg-yellow-100 rounded-full text-sm text-gray-700">
-            Current Turn
-          </div>
-        )}
       </div>
     );
   }
