@@ -11,14 +11,13 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="bg-blue-600 text-white p-4 flex items-center justify-between shadow-md">
+    <header className="bg-blue-600 text-white p-4 flex items-center justify-end shadow-md">
       <div
         className="flex items-center cursor-pointer hover:animate-bounce"
         onClick={handlePigClick}
       >
         <h1 className="text-2xl font-bold">Two Dice Pig</h1>
       </div>
-      {/* Future: Add additional header elements if needed */}
     </header>
   );
 };

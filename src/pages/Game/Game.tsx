@@ -88,14 +88,14 @@ export const Game: React.FC = () => {
             </div>
 
             {/* Middle Section - Dice */}
-            <div className="flex-grow flex justify-center items-center border-2 border-red-500">
+            <div className="flex-grow flex justify-center items-center xs-m-[15px] sm-m-[15px]">
               <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg">
                 <DicePair values={dice} isRolling={isRolling} />
               </div>
             </div>
 
             {/* Bottom Section - Current Scores and Buttons */}
-            <div className="xl:mb-60">
+            <div className="xl:mb-[125px]">
               <div className="flex justify-between items-center gap-2">
                 <div className="flex-1 flex justify-center">
                   <PlayerScore

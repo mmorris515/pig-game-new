@@ -1,5 +1,3 @@
-// src/pages/Game/GamePage.tsx
-
 import React from "react";
 import Header from "../../components/Layout/Header";
 import Game from "./Game";
