@@ -69,9 +69,9 @@ export const Game: React.FC = () => {
           </div>
         ) : (
           <>
-            <div className="flex flex-row justify-between items-start gap-4 border-solid border-orange-200 border-2">
+            <div className="flex flex-row justify-between items-start border-solid border-orange-200 border-2">
               {/* Left Column - Player Scores */}
-              <div className="flex flex-col justify-between items-center flex-1">
+              <div className="flex flex-col justify-between items-center flex-auto space-y-72">
                 <PlayerScore
                   player={players[0]}
                   isActive={activePlayer === 0}
@@ -85,14 +85,14 @@ export const Game: React.FC = () => {
               </div>
 
               {/* Middle Column - Dice and Buttons */}
-              <div className="flex flex-col justify-between items-center flex-1">
+              <div className="flex flex-col justify-between items-center flex-1 space-y-28">
                 <div className="flex-grow flex justify-center items-center">
                   <div className="bg-white rounded-xl p-4 sm:p-6 drop-shadow-[0_0px_3px_rgba(0,0,0,0.25)]">
                     <DicePair values={dice} isRolling={isRolling} />
                   </div>
                 </div>
                 {!players[activePlayer].isComputer && (
-                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mt-4">
+                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mt-4 mb-2">
                     <button
                       onClick={handleRoll}
                       disabled={isRolling}
@@ -116,7 +116,7 @@ export const Game: React.FC = () => {
               </div>
 
               {/* Right Column - Computer Scores */}
-              <div className="flex flex-col justify-between items-center flex-1">
+              <div className="flex flex-col justify-between items-center flex-auto space-y-72">
                 <PlayerScore
                   player={players[1]}
                   isActive={activePlayer === 1}
