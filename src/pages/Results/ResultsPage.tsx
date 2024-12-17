@@ -15,7 +15,12 @@ const ResultsPage: React.FC = () => {
   };
 
   const handleResetHistory = () => {
-    dispatch(resetGameHistory());
+    const confirmed = window.confirm(
+      "Are you sure you want to reset the game history?"
+    );
+    if (confirmed) {
+      dispatch(resetGameHistory());
+    }
   };
 
   return (
