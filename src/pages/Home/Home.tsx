@@ -17,7 +17,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="flex flex-col h-screen">
       <Header />
-      <div className="flex-grow bg-gradient-to-b from-blue-50 to-blue-100 flex items-center justify-center p-4">
+      <div className="flex-grow bg-gradient-to-b from-stone-50 to-stone-100 flex items-center justify-center p-4">
         <div className="bg-white rounded-xl p-8 shadow-lg max-w-2xl w-full">
           <h2 className="text-3xl font-bold mb-6 text-blue-600 text-center">
             Welcome to Two Dice Pig!

@@ -18,9 +18,9 @@ const PlayerScore: React.FC<PlayerScoreProps> = ({
       <div
         className={`p-4 rounded-lg w-full text-center ${
           isActive
-            ? "bg-blue-100 shadow-md transform scale-105 transition-all"
+            ? "bg-red-100 shadow-md transform scale-105 transition-all border-red-600"
             : "bg-gray-50"
-        } ${player.isComputer ? "border-red-200" : "border-blue-200"} border-2`}
+        } border-2`}
       >
         <h2 className="text-xl font-bold mb-2">{player.name}</h2>
         <div className="text-3xl font-bold">{player.totalScore}</div>

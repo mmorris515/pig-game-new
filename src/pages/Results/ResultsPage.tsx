@@ -21,7 +21,7 @@ const ResultsPage: React.FC = () => {
   return (
     <div className="flex flex-col h-screen">
       <Header />
-      <div className="flex-grow bg-gradient-to-b from-blue-50 to-blue-100 p-16 overflow-auto">
+      <div className="flex-grow bg-gradient-to-b from-stone-50 to-stone-100 p-16 overflow-auto">
         <div className="max-w-4xl mx-auto bg-white rounded-xl p-8 shadow-lg">
           <h2 className="text-3xl font-bold mb-6 text-blue-600 text-center">
             Game Results
