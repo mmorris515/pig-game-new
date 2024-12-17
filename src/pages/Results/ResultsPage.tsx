@@ -45,7 +45,9 @@ const ResultsPage: React.FC = () => {
                     <td className="p-3 border">{index + 1}</td>
                     <td
                       className={`p-3 border ${
-                        game.winner === 0 ? "text-green-600" : "text-red-600"
+                        game.winner === 0
+                          ? "text-green-600 font-semibold"
+                          : "text-red-600 font-semibold"
                       }`}
                     >
                       {game.winner === 0 ? "Win" : "Loss"}
@@ -63,16 +65,16 @@ const ResultsPage: React.FC = () => {
           <div className="text-center mt-6">
             <button
               onClick={handleNewGame}
-              className="bg-green-500 text-white px-8 py-3 rounded-lg text-xl
-                hover:bg-green-600 transform hover:scale-105 transition-all
+              className="bg-gray-500 text-white px-8 py-3 rounded-lg text-xl
+                hover:bg-gray-600 transform hover:scale-105 transition-all
                 shadow-md"
             >
               New Game
             </button>
             <button
               onClick={handleResetHistory}
-              className="bg-red-500 text-white px-8 py-3 rounded-lg text-xl
-                hover:bg-red-600 transform hover:scale-105 transition-all
+              className="bg-gray-400 text-white px-8 py-3 rounded-lg text-xl
+                hover:bg-red-300 transform hover:scale-105 transition-all
                 shadow-md ml-4"
             >
               Reset History

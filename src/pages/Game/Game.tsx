@@ -110,8 +110,8 @@ export const Game: React.FC = () => {
                     <button
                       onClick={handleRoll}
                       disabled={isRolling}
-                      className="bg-orange-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-base sm:text-lg
-                      hover:bg-orange-700 disabled:bg-orange-400 disabled:cursor-not-allowed
+                      className="bg-gray-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-base sm:text-lg
+                      hover:bg-gray-700 disabled:bg-gray-400 disabled:cursor-not-allowed
                       transform hover:scale-105 transition-all whitespace-nowrap"
                     >
                       Roll Dice
