@@ -16,7 +16,7 @@ const PlayerScore: React.FC<PlayerScoreProps> = ({
   if (type === "header") {
     return (
       <div
-        className={`p-4 rounded-lg w-full text-center ${
+        className={`p-4 rounded-lg md:w-5/12 sm:w-full text-center ${
           isActive
             ? "bg-red-100 shadow-md transform scale-105 transition-all border-red-600"
             : "bg-gray-50"
@@ -30,7 +30,7 @@ const PlayerScore: React.FC<PlayerScoreProps> = ({
 
   return (
     <div className="text-center">
-      <p className="text-sm text-gray-600">Current Turn</p>
+      <p className="text-sm text-gray-600">{player.name} Current Turn</p>
       <p className="text-2xl font-semibold">{player.turnScore}</p>
     </div>
   );

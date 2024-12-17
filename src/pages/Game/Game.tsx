@@ -69,44 +69,30 @@ export const Game: React.FC = () => {
           </div>
         ) : (
           <>
-            {/* Top Section - Player Total Scores */}
-            <div className="flex justify-between items-start gap-2">
-              <div className="flex-1 flex justify-center">
+            <div className="flex flex-row justify-between items-start gap-4 border-solid border-orange-200 border-2">
+              {/* Left Column - Player Scores */}
+              <div className="flex flex-col justify-between items-center flex-1">
                 <PlayerScore
                   player={players[0]}
                   isActive={activePlayer === 0}
                   type="header"
                 />
-              </div>
-              <div className="flex-1 flex justify-center">
                 <PlayerScore
-                  player={players[1]}
-                  isActive={activePlayer === 1}
-                  type="header"
+                  player={players[0]}
+                  isActive={activePlayer === 0}
+                  type="footer"
                 />
               </div>
-            </div>
 
-            {/* Middle Section - Dice */}
-            <div className="flex-grow flex justify-center items-center xs-m-[15px] sm-m-[15px]">
-              <div className="bg-white rounded-xl p-4 sm:p-6 shadow-lg">
-                <DicePair values={dice} isRolling={isRolling} />
-              </div>
-            </div>
-
-            {/* Bottom Section - Current Scores and Buttons */}
-            <div className="xl:mb-[125px]">
-              <div className="flex justify-between items-center gap-2">
-                <div className="flex-1 flex justify-center">
-                  <PlayerScore
-                    player={players[0]}
-                    isActive={activePlayer === 0}
-                    type="footer"
-                  />
+              {/* Middle Column - Dice and Buttons */}
+              <div className="flex flex-col justify-between items-center flex-1">
+                <div className="flex-grow flex justify-center items-center">
+                  <div className="bg-white rounded-xl p-4 sm:p-6 drop-shadow-[0_0px_3px_rgba(0,0,0,0.25)]">
+                    <DicePair values={dice} isRolling={isRolling} />
+                  </div>
                 </div>
-
                 {!players[activePlayer].isComputer && (
-                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
+                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 mt-4">
                     <button
                       onClick={handleRoll}
                       disabled={isRolling}
@@ -127,14 +113,20 @@ export const Game: React.FC = () => {
                     </button>
                   </div>
                 )}
+              </div>
 
-                <div className="flex-1 flex justify-center">
-                  <PlayerScore
-                    player={players[1]}
-                    isActive={activePlayer === 1}
-                    type="footer"
-                  />
-                </div>
+              {/* Right Column - Computer Scores */}
+              <div className="flex flex-col justify-between items-center flex-1">
+                <PlayerScore
+                  player={players[1]}
+                  isActive={activePlayer === 1}
+                  type="header"
+                />
+                <PlayerScore
+                  player={players[1]}
+                  isActive={activePlayer === 1}
+                  type="footer"
+                />
               </div>
             </div>
           </>
