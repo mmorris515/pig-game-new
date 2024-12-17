@@ -19,7 +19,7 @@ const HomePage: React.FC = () => {
       <Header />
       <div className="flex-grow bg-gradient-to-b from-stone-50 to-stone-100 flex items-center justify-center p-4">
         <div className="bg-white rounded-xl p-8 shadow-lg max-w-2xl w-full">
-          <h2 className="text-3xl font-bold mb-6 text-blue-600 text-center">
+          <h2 className="text-3xl font-bold mb-6 text-gray-600 text-center">
             Welcome to Two Dice Pig!
           </h2>
 
@@ -38,8 +38,8 @@ const HomePage: React.FC = () => {
           <div className="text-center">
             <button
               onClick={handleNewGame}
-              className="bg-green-500 text-white px-8 py-3 rounded-lg text-xl
-                hover:bg-green-600 transform hover:scale-105 transition-all
+              className="bg-rose-600 text-white px-8 py-3 rounded-lg text-xl
+                hover:bg-rose-700 transform hover:scale-105 transition-all
                 shadow-md"
             >
               New Game
