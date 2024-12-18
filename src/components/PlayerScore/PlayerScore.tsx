@@ -22,16 +22,30 @@ const PlayerScore: React.FC<PlayerScoreProps> = ({
             : "bg-gray-50"
         } border-2`}
       >
-        <h2 className="text-xl font-bold mb-2">{player.name}</h2>
+        <h2 className="text-xl mb-2">
+          <span className="font-bold">Total Score</span>
+          <br />
+          <span className="font-regular">{player.name}</span>
+        </h2>
         <div className="text-3xl font-bold">{player.totalScore}</div>
       </div>
     );
   }
 
   return (
-    <div className="text-center">
-      <p className="text-sm text-gray-600">{player.name} Current Turn</p>
-      <p className="text-2xl font-semibold">{player.turnScore}</p>
+    <div
+      className={`p-4 rounded-lg md:w-5/12 sm:w-full text-center ${
+        isActive
+          ? "bg-red-100 shadow-md transform scale-105 transition-all border-red-600"
+          : "bg-gray-50"
+      } border-2`}
+    >
+      <h2 className="text-xl mb-2">
+        <span className="font-bold">Turn Score</span>
+        <br />
+        <span className="font-regular">{player.name}</span>
+      </h2>
+      <div className="text-2xl font-semibold">{player.turnScore}</div>
     </div>
   );
 };
