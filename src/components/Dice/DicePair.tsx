@@ -1,4 +1,3 @@
-// src/components/Dice/DicePair.tsx
 import React from "react";
 import Die from "./Die";
 
