@@ -80,7 +80,7 @@ export const Game: React.FC = () => {
                   <button
                     onClick={handleRoll}
                     disabled={isRolling}
-                    className="bg-midnightBlue text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-base sm:text-lg disabled:bg-gray-300 disabled:cursor-not-allowed
+                    className="bg-midnightBlue text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-2xl disabled:bg-gray-300 disabled:cursor-not-allowed
                       transform hover:scale-105 transition-all whitespace-nowrap"
                   >
                     Roll Dice
@@ -88,7 +88,7 @@ export const Game: React.FC = () => {
                   <button
                     onClick={() => dispatch(hold())}
                     disabled={isRolling}
-                    className="bg-asbestos text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-base sm:text-lg disabled:bg-gray-300 disabled:cursor-not-allowed
+                    className="bg-asbestos text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-2xl disabled:bg-gray-300 disabled:cursor-not-allowed
                       transform hover:scale-105 transition-all whitespace-nowrap"
                   >
                     Hold
