@@ -59,8 +59,8 @@ const gameSlice = createSlice({
       currentPlayer.totalScore += currentPlayer.turnScore;
       currentPlayer.turnScore = 0;
       
-      // Check for winner (set to 25 for now, for testing)
-      if (currentPlayer.totalScore >= 25) {
+      // Check for winner
+      if (currentPlayer.totalScore >= 100) {
         state.gameOver = true;
         state.winner = currentPlayer.id;
         // Add game result to history

@@ -22,11 +22,18 @@ export const Game: React.FC = () => {
     if (players[activePlayer].isComputer && !gameOver) {
       const timer = setTimeout(() => {
         const currentPlayer = players[activePlayer];
+        const opponentPlayer = players[(activePlayer + 1) % 2];
         const potentialTotalScore =
           currentPlayer.totalScore + currentPlayer.turnScore;
+        const scoreDifference =
+          currentPlayer.totalScore - opponentPlayer.totalScore;
+
+        // Adjust strategy based on score difference and turn score
         const shouldHold =
-          // SET TO 25 FOR TESTING
-          currentPlayer.turnScore >= 20 || potentialTotalScore >= 25;
+          currentPlayer.turnScore >= 20 || // Hold if turn score is 20 or more
+          (currentPlayer.turnScore >= 15 && scoreDifference > 10) || // Hold if turn score is 15 or more and leading by 10 points
+          potentialTotalScore >= 100; // Always hold if reaching 100 points
+
         if (shouldHold) {
           dispatch(hold());
         } else {
