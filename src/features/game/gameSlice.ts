@@ -16,6 +16,7 @@ const initialState: GameState = {
   gameOver: false,
   winner: null,
   isRolling: false,
+  playerRolls: 0,
   gameHistory: loadGameHistory() // Load game history from local storage
 };
 
@@ -32,6 +33,9 @@ const gameSlice = createSlice({
       const die2 = Math.floor(Math.random() * 6) + 1;
       state.dice = [die1, die2];
       state.isRolling = false;
+
+      // Increment playerRolls if the active player is the human player 
+      if (!state.players[state.activePlayer].isComputer) { state.playerRolls += 1; }
 
       // If either die is 1, lose turn score
       if (die1 === 1 || die2 === 1) {
@@ -63,7 +67,7 @@ const gameSlice = createSlice({
         state.gameHistory.push({
           winner: currentPlayer.id,
           finalScores: [state.players[0].totalScore, state.players[1].totalScore],
-          playerRolls: state.dice.reduce((a, b) => a + b, 0)
+          playerRolls: state.playerRolls // Use playerRolls counter
         });
         saveGameHistory(state.gameHistory); // Save game history to local storage
       } else {
@@ -78,6 +82,7 @@ const gameSlice = createSlice({
       state.gameOver = initialState.gameOver;
       state.winner = initialState.winner;
       state.isRolling = initialState.isRolling;
+      state.playerRolls = 0; // Reset playerRolls
       // Preserve gameHistory
     },
 

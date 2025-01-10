@@ -20,4 +20,5 @@ export interface Player {
     winner: number | null;
     isRolling: boolean;
     gameHistory: GameHistoryEntry[];
+    playerRolls: number;
   }
