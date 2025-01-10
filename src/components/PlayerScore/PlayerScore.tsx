@@ -1,4 +1,3 @@
-// src/components/PlayerScore/PlayerScore.tsx
 import React from "react";
 import type { Player } from "../../features/game/types";
 
@@ -15,24 +14,24 @@ const PlayerScore: React.FC<PlayerScoreProps> = ({
 }) => {
   if (type === "header") {
     return (
-      <div
-        className={`p-4 rounded-lg md:w-5/12 sm:w-full text-center border-2`}
-      >
-        <h2 className="text-xl mb-2">
+      <div className={`p-4 rounded-lg md:w-5/12 sm:w-full text-center`}>
+        <h2 className="text-3xl text-wetAsphalt mb-2">
           <span className="font-bold">Total Score</span>
           <br />
           <span className="font-regular">{player.name}</span>
         </h2>
-        <div className="text-3xl font-bold">{player.totalScore}</div>
+        <div className="text-6xl text-pomegranate font-thin">
+          {player.totalScore}
+        </div>
       </div>
     );
   }
 
   return (
     <div
-      className={`p-4 rounded-lg md:w-5/12 sm:w-full text-center ${
+      className={`p-4 md:w-5/12 sm:w-full text-center ${
         isActive
-          ? "bg-red-100 shadow-md transform scale-105 transition-all border-red-600"
+          ? "bg-clouds shadow-md transform scale-105 transition-all border-pomegranate"
           : "bg-gray-50"
       } border-2`}
     >

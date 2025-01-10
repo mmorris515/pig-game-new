@@ -70,16 +70,14 @@ const ResultsPage: React.FC = () => {
           <div className="text-center mt-6">
             <button
               onClick={handleNewGame}
-              className="bg-gray-500 text-white px-8 py-3 rounded-lg text-xl
-                hover:bg-gray-600 transform hover:scale-105 transition-all
+              className="bg-midnightBlue text-white px-8 py-3 rounded-lg text-xl transform hover:scale-105 transition-all
                 shadow-md"
             >
               New Game
             </button>
             <button
               onClick={handleResetHistory}
-              className="bg-gray-400 text-white px-8 py-3 rounded-lg text-xl
-                hover:bg-red-300 transform hover:scale-105 transition-all
+              className="bg-asbestos text-white px-8 py-3 rounded-lg text-xl transform hover:scale-105 transition-all
                 shadow-md ml-4"
             >
               Reset History

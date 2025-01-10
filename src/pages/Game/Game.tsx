@@ -69,8 +69,8 @@ export const Game: React.FC = () => {
             </div>
 
             {/* Middle Column - Dice and Buttons */}
-            <div className="flex flex-col justify-between items-center flex-1 space-y-64">
-              <div className="flex-grow flex justify-center items-center">
+            <div className="flex flex-col justify-between items-center flex-1 space-y-48">
+              <div className="flex-grow flex justify-center items-center pt-12">
                 <div className="bg-white rounded-xl p-4 sm:p-6 drop-shadow-[0_0px_3px_rgba(0,0,0,0.25)]">
                   <DicePair values={dice} isRolling={isRolling} />
                 </div>
@@ -80,8 +80,7 @@ export const Game: React.FC = () => {
                   <button
                     onClick={handleRoll}
                     disabled={isRolling}
-                    className="bg-gray-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-base sm:text-lg
-                      hover:bg-gray-700 disabled:bg-gray-400 disabled:cursor-not-allowed
+                    className="bg-midnightBlue text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-base sm:text-lg disabled:bg-gray-300 disabled:cursor-not-allowed
                       transform hover:scale-105 transition-all whitespace-nowrap"
                   >
                     Roll Dice
@@ -89,8 +88,7 @@ export const Game: React.FC = () => {
                   <button
                     onClick={() => dispatch(hold())}
                     disabled={isRolling}
-                    className="bg-gray-400 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-base sm:text-lg
-                      hover:bg-gray-500 disabled:bg-gray-300 disabled:cursor-not-allowed
+                    className="bg-asbestos text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-base sm:text-lg disabled:bg-gray-300 disabled:cursor-not-allowed
                       transform hover:scale-105 transition-all whitespace-nowrap"
                   >
                     Hold

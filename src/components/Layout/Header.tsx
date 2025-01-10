@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   return (
-    <header className="bg-red-600 text-white p-3 flex items-center justify-between shadow-md">
+    <header className="bg-carrot text-white p-3 flex items-center justify-between shadow-md">
       <div className="flex items-center">
         <PigIcon />
       </div>

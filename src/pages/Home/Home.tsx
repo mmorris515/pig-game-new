@@ -19,13 +19,13 @@ const HomePage: React.FC = () => {
       <Header />
       <div className="flex-grow bg-gradient-to-b from-stone-50 to-stone-100 flex items-center justify-center p-4">
         <div className="bg-white rounded-xl p-8 shadow-lg max-w-2xl w-full">
-          <h2 className="text-3xl font-bold mb-6 text-gray-600 text-center">
+          <h2 className="text-3xl font-bold mb-6 text-wetAsphalt text-center">
             Welcome to Two Dice Pig!
           </h2>
 
           <div className="mb-6">
             <h3 className="text-xl font-semibold mb-4">Game Rules:</h3>
-            <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <ul className="list-disc list-inside space-y-2 text-wetAsphalt">
               <li>Roll dice to accumulate points in your turn</li>
               <li>If you roll a 1, you lose all points for the current turn</li>
               <li>
@@ -38,8 +38,7 @@ const HomePage: React.FC = () => {
           <div className="text-center">
             <button
               onClick={handleNewGame}
-              className="bg-rose-600 text-white px-8 py-3 rounded-lg text-xl
-                hover:bg-rose-700 transform hover:scale-105 transition-all
+              className="bg-midnightBlue text-white px-8 py-3 rounded-lg text-xl transform hover:scale-105 transition-all
                 shadow-md"
             >
               New Game
