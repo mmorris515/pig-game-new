@@ -35,12 +35,12 @@ const PlayerScore: React.FC<PlayerScoreProps> = ({
           : "bg-gray-50"
       } border-2`}
     >
-      <h2 className="text-xl mb-2">
+      <h2 className="text-2xl mb-2">
         <span className="font-bold">Turn Score</span>
         <br />
         <span className="font-regular">{player.name}</span>
       </h2>
-      <div className="text-2xl font-semibold">{player.turnScore}</div>
+      <div className="text-4xl font-thin">{player.turnScore}</div>
     </div>
   );
 };
