@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const PigIcon: React.FC = () => {
   return (
-    <Link to="/">
+    <Link to="/" title="Homepage and rules">
       <div className="hover:drop-shadow-[0_4px_6px_rgba(255,255,255,0.5)] active:drop-shadow-[0_4px_6px_rgba(255,255,255,0.5)] transition-shadow duration-300">
         <svg
           width="52"
