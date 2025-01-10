@@ -69,14 +69,17 @@ export const Game: React.FC = () => {
             </div>
 
             {/* Middle Column - Dice and Buttons */}
-            <div className="flex flex-col justify-between items-center flex-1 space-y-48">
-              <div className="flex-grow flex justify-center items-center pt-12">
-                <div className="bg-white rounded-xl p-4 sm:p-6 drop-shadow-[0_0px_3px_rgba(0,0,0,0.25)]">
+            <div className="flex flex-col justify-between h-full">
+              <div className="flex flex-grow justify-center items-center pt-12">
+                <div className="bg-white rounded-xl p-4 flex self-start drop-shadow-[0_0px_3px_rgba(0,0,0,0.25)]">
                   <DicePair values={dice} isRolling={isRolling} />
                 </div>
               </div>
               {!players[activePlayer].isComputer && (
-                <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 m-2">
+                <div
+                  title="Buttons container"
+                  className="flex flex-col self-center sm:flex-row gap-5"
+                >
                   <button
                     onClick={handleRoll}
                     disabled={isRolling}

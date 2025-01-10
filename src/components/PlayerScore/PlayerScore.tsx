@@ -16,7 +16,7 @@ const PlayerScore: React.FC<PlayerScoreProps> = ({
     return (
       <div className={`p-4 rounded-lg md:w-5/12 sm:w-full text-center`}>
         <h2 className="text-3xl text-wetAsphalt mb-2">
-          <span className="font-bold">Total Score</span>
+          <span className="font-semibold">TOTAL</span>
           <br />
           <span className="font-regular">{player.name}</span>
         </h2>
@@ -36,7 +36,7 @@ const PlayerScore: React.FC<PlayerScoreProps> = ({
       } border-2`}
     >
       <h2 className="text-2xl mb-2">
-        <span className="font-bold">Turn Score</span>
+        <span className="font-semibold">TURN</span>
         <br />
         <span className="font-regular">{player.name}</span>
       </h2>
