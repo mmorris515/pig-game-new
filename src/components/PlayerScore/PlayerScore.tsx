@@ -16,11 +16,7 @@ const PlayerScore: React.FC<PlayerScoreProps> = ({
   if (type === "header") {
     return (
       <div
-        className={`p-4 rounded-lg md:w-5/12 sm:w-full text-center ${
-          isActive
-            ? "bg-red-100 shadow-md transform scale-105 transition-all border-red-600"
-            : "bg-gray-50"
-        } border-2`}
+        className={`p-4 rounded-lg md:w-5/12 sm:w-full text-center border-2`}
       >
         <h2 className="text-xl mb-2">
           <span className="font-bold">Total Score</span>
