@@ -24,22 +24,22 @@ const Die: React.FC<DieProps> = ({ value, isRolling }) => {
   };
 
   const getDotClass = (position: string) => {
-    const baseClass = "w-3 h-3 bg-black rounded-full";
+    const baseClass = "w-2 h-2 sm:w-3 sm:h-3 bg-black rounded-full"; // Adjusted size
     switch (position) {
       case "center":
         return `${baseClass} absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2`;
       case "top-left":
-        return `${baseClass} absolute top-4 left-4`;
+        return `${baseClass} absolute top-2 sm:top-4 left-2 sm:left-4`; // Adjusted position
       case "top-right":
-        return `${baseClass} absolute top-4 right-4`;
+        return `${baseClass} absolute top-2 sm:top-4 right-2 sm:right-4`; // Adjusted position
       case "middle-left":
-        return `${baseClass} absolute top-1/2 left-4 -translate-y-1/2`;
+        return `${baseClass} absolute top-1/2 left-2 sm:left-4 -translate-y-1/2`; // Adjusted position
       case "middle-right":
-        return `${baseClass} absolute top-1/2 right-4 -translate-y-1/2`;
+        return `${baseClass} absolute top-1/2 right-2 sm:right-4 -translate-y-1/2`; // Adjusted position
       case "bottom-left":
-        return `${baseClass} absolute bottom-4 left-4`;
+        return `${baseClass} absolute bottom-2 sm:bottom-4 left-2 sm:left-4`; // Adjusted position
       case "bottom-right":
-        return `${baseClass} absolute bottom-4 right-4`;
+        return `${baseClass} absolute bottom-2 sm:bottom-4 right-2 sm:right-4`; // Adjusted position
       default:
         return baseClass;
     }
@@ -48,8 +48,8 @@ const Die: React.FC<DieProps> = ({ value, isRolling }) => {
   return (
     <div
       className={`
-        relative w-24 h-24 
-        bg-white rounded-xl 
+        relative w-12 h-12 sm:w-24 sm:h-24 
+        bg-white rounded-md  // Further reduced border radius for a more square shape
         shadow-lg border-2 border-gray-200
         ${
           isRolling
