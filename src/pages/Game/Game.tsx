@@ -57,12 +57,12 @@ export const Game: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-20 to-gray-100 m-4">
-      <div className="h-screen flex flex-col p-2 sm:p-3 max-h-screen">
+    <div className="min-h-screen bg-gradient-to-b from-gray-20 to-gray-100 m-1 sm:m-4">
+      <div className="h-screen flex flex-col p-2 sm:p-3 max-h-full">
         <>
           <div className="flex flex-row justify-between items-start">
             {/* Left Column - Player Scores */}
-            <div className="flex flex-col justify-between items-center flex-auto space-y-72">
+            <div className="flex flex-col justify-between items-center flex-auto space-y-56">
               <PlayerScore
                 player={players[0]}
                 isActive={activePlayer === 0}
@@ -90,7 +90,7 @@ export const Game: React.FC = () => {
                   <button
                     onClick={handleRoll}
                     disabled={isRolling}
-                    className="bg-midnightBlue text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-2xl disabled:bg-gray-300 disabled:cursor-not-allowed
+                    className="bg-midnightBlue text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-2xl sm:text-lg  disabled:bg-gray-300 disabled:cursor-not-allowed
                       transform hover:scale-105 transition-all whitespace-nowrap"
                   >
                     Roll Dice
@@ -98,7 +98,7 @@ export const Game: React.FC = () => {
                   <button
                     onClick={() => dispatch(hold())}
                     disabled={isRolling}
-                    className="bg-asbestos text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-2xl disabled:bg-gray-300 disabled:cursor-not-allowed
+                    className="bg-asbestos text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-2xl sm:text-lg disabled:bg-gray-300 disabled:cursor-not-allowed
                       transform hover:scale-105 transition-all whitespace-nowrap"
                   >
                     Hold
@@ -108,7 +108,7 @@ export const Game: React.FC = () => {
             </div>
 
             {/* Right Column - Computer Scores */}
-            <div className="flex flex-col justify-between items-center flex-auto space-y-72">
+            <div className="flex flex-col justify-between items-center flex-auto space-y-56">
               <PlayerScore
                 player={players[1]}
                 isActive={activePlayer === 1}
