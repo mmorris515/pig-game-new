@@ -49,7 +49,7 @@ const Die: React.FC<DieProps> = ({ value, isRolling }) => {
     <div
       className={`
         relative w-12 h-12 sm:w-24 sm:h-24 
-        bg-white rounded-md  // Further reduced border radius for a more square shape
+        bg-white rounded-sm  // Further reduced border radius for the most square shape
         shadow-lg border-2 border-gray-200
         ${
           isRolling
