@@ -21,13 +21,15 @@ const HomePage: React.FC = () => {
           title="Welcome Container"
           className="bg-white rounded-xl p-8 shadow-lg max-w-2xl w-full flex flex-col"
         >
-          <h2 className="text-3xl font-bold mb-6 text-wetAsphalt text-center">
+          <h2 className="text-xl md:text-3xl font-bold mb-6 text-wetAsphalt text-center">
             Welcome to Two Dice Pig!
           </h2>
           <div className="mb-6 p-4">
             <div title="Game Rules Container">
-              <h3 className="text-2xl font-semibold mb-4">Game Rules:</h3>
-              <ul className="list-disc list-inside space-y-2 text-wetAsphalt text-lg">
+              <h3 className="text-lg md:text-xl font-semibold mb-4">
+                Game Rules:
+              </h3>
+              <ul className="list-disc list-inside space-y-2 text-wetAsphalt text-md md:text-lg">
                 <li>Roll dice to accumulate points in your turn</li>
                 <li>
                   If you roll a 1, you lose all points for the current turn
@@ -42,14 +44,14 @@ const HomePage: React.FC = () => {
           <div className="mt-4 mx-auto">
             <button
               onClick={handleNewGame}
-              className="bg-midnightBlue text-white px-8 py-3 rounded-lg text-2xl transform hover:scale-105 transition-all shadow-md"
+              className="bg-midnightBlue text-white px-8 py-3 rounded-lg text-lg md:text-2xl transform hover:scale-105 transition-all shadow-md"
             >
               New Game
             </button>
           </div>
           <a
             href="/results"
-            className="text-sm text-midnightBlue underline flex self-end ml-auto"
+            className="text-sm text-midnightBlue underline flex self-end ml-auto mt-3 md:mt-1"
           >
             View Results
           </a>
