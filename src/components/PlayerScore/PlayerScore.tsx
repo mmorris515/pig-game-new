@@ -14,13 +14,13 @@ const PlayerScore: React.FC<PlayerScoreProps> = ({
 }) => {
   if (type === "header") {
     return (
-      <div className={`p-4 rounded-lg md:w-5/12 sm:w-full text-center`}>
-        <h2 className="text-3xl text-wetAsphalt mb-2">
+      <div className={`p-4 md:w-5/12 sm:w-full text-center`}>
+        <h2 className="text-lg lg:text-3xl text-wetAsphalt mb-2">
           <span className="font-semibold">TOTAL</span>
           <br />
           <span className="font-regular">{player.name}</span>
         </h2>
-        <div className="text-8xl text-pomegranate font-thin">
+        <div className="text-2xl lg:text-7xl text-pomegranate font-thin">
           {player.totalScore}
         </div>
       </div>
@@ -29,18 +29,18 @@ const PlayerScore: React.FC<PlayerScoreProps> = ({
 
   return (
     <div
-      className={`p-4 md:w-5/12 sm:w-full text-center ${
+      className={`p-0 lg:p-4 w-8/12 lg:w-5/12 text-center ${
         isActive
           ? "bg-clouds shadow-md transform scale-105 transition-all border-pomegranate"
           : "bg-gray-50"
-      } border-2`}
+      } border-2 `}
     >
-      <h2 className="text-2xl mb-2">
+      <h2 className="text-lg lg:text-2xl mb-2">
         <span className="font-semibold">TURN</span>
         <br />
         <span className="font-regular">{player.name}</span>
       </h2>
-      <div className="text-6xl font-thin">{player.turnScore}</div>
+      <div className="text-2xl lg:text-6xl font-thin">{player.turnScore}</div>
     </div>
   );
 };

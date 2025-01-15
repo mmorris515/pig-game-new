@@ -57,8 +57,8 @@ export const Game: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-20 to-gray-100 m-1 sm:m-4">
-      <div className="h-screen flex flex-col p-2 sm:p-3 max-h-full">
+    <div className="min-h-screen bg-gradient-to-b from-gray-20 to-gray-100 m-1 lg:m-4">
+      <div className="h-screen flex flex-col p-0 lg:p-1 max-h-full">
         <>
           <div className="flex flex-row justify-between items-start">
             {/* Left Column - Player Scores */}
@@ -85,12 +85,12 @@ export const Game: React.FC = () => {
               {!players[activePlayer].isComputer && (
                 <div
                   title="Buttons container"
-                  className="flex flex-col self-center sm:flex-row gap-5"
+                  className="flex flex-col lg:flex-row self-center gap-5"
                 >
                   <button
                     onClick={handleRoll}
                     disabled={isRolling}
-                    className="bg-midnightBlue text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-2xl sm:text-lg  disabled:bg-gray-300 disabled:cursor-not-allowed
+                    className="bg-midnightBlue text-white px-2 lg:px-4 py-3 lg:py-2 rounded-lg text-lg lg:text-2xl  disabled:bg-gray-300 disabled:cursor-not-allowed
                       transform hover:scale-105 transition-all whitespace-nowrap"
                   >
                     Roll Dice
@@ -98,7 +98,7 @@ export const Game: React.FC = () => {
                   <button
                     onClick={() => dispatch(hold())}
                     disabled={isRolling}
-                    className="bg-asbestos text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-2xl sm:text-lg disabled:bg-gray-300 disabled:cursor-not-allowed
+                    className="bg-asbestos text-white px-2 lg:px-4 py-3 lg:py-2 rounded-lg text-lg lg:text-2xl disabled:bg-gray-300 disabled:cursor-not-allowed
                       transform hover:scale-105 transition-all whitespace-nowrap"
                   >
                     Hold
