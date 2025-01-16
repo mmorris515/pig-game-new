@@ -62,7 +62,7 @@ export const Game: React.FC = () => {
         <>
           <div className="flex flex-row justify-between items-start">
             {/* Left Column - Player Scores */}
-            <div className="flex flex-col justify-between items-center flex-auto space-y-56">
+            <div className="flex flex-col justify-between items-center flex-auto space-y-96 lg:space-y-56">
               <PlayerScore
                 player={players[0]}
                 isActive={activePlayer === 0}
@@ -108,7 +108,7 @@ export const Game: React.FC = () => {
             </div>
 
             {/* Right Column - Computer Scores */}
-            <div className="flex flex-col justify-between items-center flex-auto space-y-56">
+            <div className="flex flex-col justify-between items-center flex-auto space-y-96 lg:space-y-56">
               <PlayerScore
                 player={players[1]}
                 isActive={activePlayer === 1}
