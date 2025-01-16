@@ -20,7 +20,7 @@ const PlayerScore: React.FC<PlayerScoreProps> = ({
           <br />
           <span className="font-regular">{player.name}</span>
         </h2>
-        <div className="text-2xl lg:text-7xl text-pomegranate font-thin">
+        <div className="text-3xl lg:text-7xl text-pomegranate font-semibold lg:font-thin">
           {player.totalScore}
         </div>
       </div>
@@ -40,7 +40,9 @@ const PlayerScore: React.FC<PlayerScoreProps> = ({
         <br />
         <span className="font-regular">{player.name}</span>
       </h2>
-      <div className="text-2xl lg:text-6xl font-thin">{player.turnScore}</div>
+      <div className="text-3xl lg:text-6xl font-semibold lg:font-thin">
+        {player.turnScore}
+      </div>
     </div>
   );
 };
