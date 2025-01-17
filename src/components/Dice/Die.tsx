@@ -48,7 +48,7 @@ const Die: React.FC<DieProps> = ({ value, isRolling }) => {
   return (
     <div
       className={`
-        relative w-12 h-12 sm:w-24 sm:h-24 
+        relative w-20 h-20
         bg-white rounded-sm 
         shadow-lg border-2 border-gray-200
         ${
