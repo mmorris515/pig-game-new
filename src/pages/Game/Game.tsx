@@ -62,7 +62,7 @@ export const Game: React.FC = () => {
         <>
           <div className="flex flex-row justify-between items-start">
             {/* Left Column - Player Scores */}
-            <div className="flex flex-col justify-between items-center flex-auto space-y-96 lg:space-y-56">
+            <div className="flex flex-col justify-between items-center flex-auto space-y-80 lg:space-y-56">
               <PlayerScore
                 player={players[0]}
                 isActive={activePlayer === 0}
@@ -77,7 +77,7 @@ export const Game: React.FC = () => {
 
             {/* Middle Column - Dice and Buttons */}
             <div className="flex flex-col justify-between h-full">
-              <div className="flex flex-grow justify-center items-center pt-12">
+              <div className="flex flex-grow justify-center items-center pt-40 lg:pt-12">
                 <div className="bg-white rounded-xl p-4 flex self-start drop-shadow-[0_0px_3px_rgba(0,0,0,0.25)]">
                   <DicePair values={dice} isRolling={isRolling} />
                 </div>
@@ -108,7 +108,7 @@ export const Game: React.FC = () => {
             </div>
 
             {/* Right Column - Computer Scores */}
-            <div className="flex flex-col justify-between items-center flex-auto space-y-96 lg:space-y-56">
+            <div className="flex flex-col justify-between items-center flex-auto space-y-80 lg:space-y-56">
               <PlayerScore
                 player={players[1]}
                 isActive={activePlayer === 1}
