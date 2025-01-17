@@ -17,15 +17,12 @@ const HomePage: React.FC = () => {
     <div className="flex flex-col h-screen">
       <Header />
       <div className="bg-gradient-to-b from-stone-50 to-stone-100 flex flex-grow items-center justify-center p-4">
-        <div
-          title="Welcome Container"
-          className="bg-white rounded-xl p-8 shadow-lg max-w-2xl w-full flex flex-col"
-        >
+        <div className="bg-white rounded-xl p-8 shadow-lg max-w-2xl w-full flex flex-col">
           <h2 className="text-xl md:text-3xl font-bold mb-6 text-wetAsphalt text-center">
             Welcome to Two Dice Pig!
           </h2>
           <div className="mb-6 p-4">
-            <div title="Game Rules Container">
+            <div>
               <h3 className="text-lg md:text-xl font-semibold mb-4">
                 Game Rules:
               </h3>

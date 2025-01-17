@@ -83,10 +83,7 @@ export const Game: React.FC = () => {
                 </div>
               </div>
               {!players[activePlayer].isComputer && (
-                <div
-                  title="Buttons container"
-                  className="flex flex-col lg:flex-row self-center gap-10 lg:gap-5"
-                >
+                <div className="flex flex-col lg:flex-row self-center gap-10 lg:gap-5">
                   <button
                     onClick={handleRoll}
                     disabled={isRolling}

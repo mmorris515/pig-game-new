@@ -35,7 +35,7 @@ const ResultsPage: React.FC = () => {
           {gameHistory.length === 0 ? (
             <p className="text-center text-gray-600">No games played yet</p>
           ) : (
-            <div title="Table Container" className="flex flex-row flex-wrap">
+            <div className="flex flex-row flex-wrap">
               <table className="w-full border-collapse text-xs md:text-base">
                 <thead>
                   <tr className="bg-red-50">
