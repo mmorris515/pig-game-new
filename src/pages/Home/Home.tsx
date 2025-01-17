@@ -51,7 +51,7 @@ const HomePage: React.FC = () => {
           </div>
           <a
             href="/results"
-            className="text-sm text-midnightBlue underline flex self-end ml-auto mt-3 md:mt-1"
+            className="text-sm text-midnightBlue underline flex self-end ml-auto mt-10 md:mt-5"
           >
             View Results
           </a>
