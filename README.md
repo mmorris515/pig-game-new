@@ -6,7 +6,7 @@ The inspiration came from one of the vanilla javascript projects in [Jonas Schme
 
 The first version used React with vanilla JS ([here](https://stupefied-colden-eca4ca.netlify.app/ 'https://stupefied-colden-eca4ca.netlify.app/') is the original project). Then, I wanted a responsive UI and a computer opponent, so I decided to start from scratch and use a NextJS template including a [React](https://reactjs.org) + [TypeScript](https://www.typescriptlang.org/) + [Tailwind](https://tailwindcss.com/) + [RTK](https://redux-toolkit.js.org/) + [eslint](https://eslint.org/) + [Vite](https://vitejs.dev) [boilerplate](https://github.com/IsaiaPhiliph/vite-reactts-tailwind-rtk-eslint.git). 
 
-[Play the game] https://2-dice-pig.netlify.app/
+[Play the game](https://2-dice-pig.netlify.app/)
 
 ## Skills / tools used
 
