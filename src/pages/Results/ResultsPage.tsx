@@ -51,7 +51,10 @@ const ResultsPage: React.FC = () => {
                 </thead>
                 <tbody>
                   {gameHistory.map((game, index) => (
-                    <tr key={index} className="hover:bg-blue-50">
+                    <tr
+                      key={index}
+                      className="hover:bg-gradient-to-b from-stone-50 to-stone-100"
+                    >
                       <td className="p-1 md:p-3 border">{index + 1}</td>
                       <td
                         className={`p-1 md:p-3 border ${
