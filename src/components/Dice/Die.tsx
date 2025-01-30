@@ -24,7 +24,7 @@ const Die: React.FC<DieProps> = ({ value, isRolling }) => {
   };
 
   const getDotClass = (position: string) => {
-    const baseClass = "w-2 h-2 sm:w-3 sm:h-3 bg-black rounded-full"; // Adjusted size
+    const baseClass = "w-3 h-3 bg-black rounded-full"; // Adjusted size
     switch (position) {
       case "center":
         return `${baseClass} absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2`;
