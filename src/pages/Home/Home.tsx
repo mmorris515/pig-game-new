@@ -26,7 +26,7 @@ const HomePage: React.FC = () => {
               <h3 className="text-lg md:text-xl font-semibold mb-4">
                 Game Rules:
               </h3>
-              <ul className="list-disc list-outside pl-5 space-y-2 text-wetAsphalt text-md md:text-lg">
+              <ul className="list-disc list-outside pl-5 space-y-4 text-wetAsphalt text-md md:text-lg">
                 <li>Roll dice to accumulate points in your turn</li>
                 <li>
                   If you roll a 1, you lose all points for the current turn
